@@ -1,1 +1,3 @@
-# TIc-Tac-Toe
+# Tic-Tac-Toe
+
+*Work in progress*

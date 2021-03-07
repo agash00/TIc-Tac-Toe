@@ -1,0 +1,43 @@
+body {
+	background-color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#start {
+	font-size: 10vh;
+	border: solid 5px red;
+	background-color: black;
+	color: red;
+	border-radius: 200px;
+	margin-top: 20%;
+	padding: 20px;
+}
+
+#gameboard {
+	margin-top: 10%;
+	position: relative;
+}
+
+.row {
+	display: flex;
+}
+
+.p {
+	width: 15vh;
+	height: 15vh;
+	background-color: red;
+	border: solid 2px black;
+	font-size: 10vh;
+	text-align: center;
+	color: white;
+}
+
+#resetBtn {
+	
+}
+
+#buttonsDiv {
+	display: block;
+}
