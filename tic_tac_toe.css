@@ -5,19 +5,86 @@ body {
 	align-items: center;
 }
 
+#line-anim {
+	width: 400px;
+	height: 3px;
+	background-color: white;
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#line-anim::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+	animation: animate 1s linear;
+	animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+	0% {
+		left: 0;
+	}
+	100% {
+		left: 100%;
+	}
+}
+
+#pre-game {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin-top: 10%;
+}
+
+form {
+	color: red;
+	font-weight: bold;
+	font-size: 3vh;
+}
+
+
+
+input {
+	margin-top: 2%;
+	background-color: black;
+	border: solid 2px red;
+	border-radius: 20px;
+	color: red;
+	font-size: 3vh;
+	text-indent: 2%;
+}
+
+input:focus {
+	outline: none;
+}
+
 #start {
-	font-size: 10vh;
+	font-size: 7vh;
 	border: solid 5px red;
 	background-color: black;
 	color: red;
 	border-radius: 200px;
-	margin-top: 20%;
+	margin-top: 10%;
 	padding: 20px;
 }
 
 #gameboard {
 	margin-top: 10%;
 	position: relative;
+}
+
+.nameDisplay {
+	color: red;
+	font-size: 2vh;
+	text-align: center;
 }
 
 .row {
@@ -34,8 +101,10 @@ body {
 	color: white;
 }
 
-#resetBtn {
-	
+#winnerText {
+	color: red;
+	text-align: center;
+	font-size: 5vh;
 }
 
 #buttonsDiv {
