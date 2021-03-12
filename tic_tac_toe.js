@@ -71,12 +71,13 @@ const gameBoard = (() => {
 		resultBoard[index] = value;
 		const endResult = gameLogic.winner(resultBoard);
 		if (endResult === 1) {
-			resultBoard = ['', '', '', '', '', '', '', '', ''];
 			resetBtn = document.createElement('button');
 			resetBtn.id = 'resetBtn';
 			resetBtn.textContent = 'Play Again';
 			buttonsDiv.appendChild(resetBtn);
+			resultBoard = ['', '', '', '', '', '', '', '', ''];
 			resetBtn.addEventListener('click', () => {
+				resultBoard = ['', '', '', '', '', '', '', '', ''];
 				gameLogic.resetAll(endResult);
 				buttonsDiv.removeChild(resetBtn);
 				});
@@ -201,6 +202,13 @@ const gameLogic = (() => {
 			won = 1;
 			c = 0;
 		}
+		if (won === 1) {
+			for(b = 0; b < allPs.length; b++) {
+				if (allPs[b].textContent === '') {
+					allPs[b].style.color = 'red';
+				}
+			}
+		}
 		return won;
 	};
 	const resetAll = (wonValue) => {
@@ -209,12 +217,14 @@ const gameLogic = (() => {
 				id = allPs[a];
 				id.textContent = '';
 				id.style.textDecoration = 'none';
+				if (id.style.color === 'red') {
+					id.style.color = 'white';
+				}
 			}
 			won = 1;
 			gameBoard.marking(won);
 			current(won);
 			won = 0;
-			winner(won);
 			winnerText.textContent = '';
 		}
 	}
